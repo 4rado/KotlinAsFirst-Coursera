@@ -67,8 +67,7 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
-
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = (sagenes * 3.0 * 16.0 * 4.445 + arshins * 16.0 * 4.445 + vershoks * 4.445) / 100.0
 /**
  * Тривиальная
  *
@@ -117,4 +116,11 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = TODO()
+fun numberRevert(number: Int): Int {
+    val hundreds = number / 100
+    val tens = (number - hundreds*100) / 10
+    val ones = (number - hundreds*100) % 10
+    val revNumber = ones * 100 + tens * 10 + hundreds
+    println (revNumber)
+    return revNumber
+}
